@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <h2>java script task</h2>
+    <input type="text"  id="num">
+    <button type="button" onclick="myFunc()"> test the num</button>
+    <p id="mesg"></p>
+    <script>
+        function myFunc(){
+            const message=document.getElementById("mesg");
+            message.innerHTML=" ";
+            let n=document.getElementById("num").value;
+            try{
+                if(n.trim()== ("")) throw  "is empty";
+                if(isNaN(n)) throw "different value";
+                n=Number(n);
+                if (n>5) throw "high value"; 
+                if(n<5) throw "low value";
+                
+            }
+            catch(err){
+                message.innerHTML="Error= " +err;
+            }
+            finally{
+                document.getElementById("num").value=" ";
+            }
+        }
+            </script>
+
+</body>
+
+</html>
